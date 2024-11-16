@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden; /* Prevents scroll bars */
+  cursor: cell;
+}
+
+#background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000; 
+  z-index: 0; /* Background at the back */
+}
+
+#text-container {
+  margin-top: 1em;
+  text-align: center;
+}
+
+#text-container p {
+  transition: opacity 0.5s ease-in-out; /* Adjust the duration and easing as needed */
+  opacity: 1; /* Set initial opacity */
+}
+
+
+#text1, #text2, #text3 {
+  font-size: 10.5em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 0.9em;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: cell;
+  transition: opacity 0.5s; /* Match this with the JavaScript timeout */
+  opacity: 1; /* Initial opacity */
+}
+
+#text1 {
+  color: rgb(255, 255, 255);
+  z-index: 2; /* Top text */
+}
+
+#text2 {
+  color: rgb(255, 255, 255);
+  z-index: 3; /* Top text */
+  filter: blur(5.5px);
+  -webkit-filter: blur(5.5px);
+}
+
+#text3 {
+  z-index: 5; /* Bottom text, beneath the first */
+  color: transparent; /* No fill color */
+  -webkit-text-stroke: 2px rgb(255, 255, 255); /* White outline with 2px thickness */
+}
+
+#container3d {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 4; /* Canvas between text and background */
+}
+
+#container3d canvas {
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute;
+}
+
